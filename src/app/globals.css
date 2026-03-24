@@ -1,136 +1,24 @@
-/* Градиентный анимированный фон */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
 body {
-  margin: 0;
   padding: 0;
-  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(135deg, #121212, #1a1a1a, #121212);
-  background-size: 400% 400%;
-  animation: gradientBG 20s ease infinite;
-  color: #e0e0e0;
-  height: 100%;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #f9fafb; /* светлый фон */
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+* {
+  box-sizing: border-box;
 }
 
-/* Контейнер */
-.container {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2rem 1rem;
-  text-align: center;
-  background-color: #1e1e1e;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-  border-radius: 14px;
-  border: 1px solid #333;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s forwards;
-}
-
-/* Заголовки с микропараллаксом */
-h1, h2, h3 {
-  margin: 1rem 0;
-  font-weight: 700;
-  color: #fff;
-  opacity: 0;
-  transform: translateY(-10px);
-  animation: fadeInDown 0.8s forwards;
-  animation-delay: 0.2s;
-  transition: transform 0.3s;
-}
-h1 { transform: translateY(var(--scroll-offset, 0px)); }
-p  { transform: translateY(calc(var(--scroll-offset, 0px)/2)); }
-
-/* Параграфы */
-p {
-  line-height: 1.6;
-  margin: 1rem 0;
-  color: #ccc;
-  opacity: 0;
-  animation: fadeIn 0.8s forwards;
-  animation-delay: 0.4s;
-}
-
-/* Ссылки */
 a {
-  color: #1e90ff;
   text-decoration: none;
-  transition: color 0.3s, transform 0.3s;
-}
-a:hover {
-  color: #63a4ff;
-  transform: translateY(-2px);
-  text-decoration: underline;
 }
 
-/* Кнопка */
-.premium-button {
-  font-family: inherit;
-  padding: 0.6rem 1.6rem;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #1e90ff, #63a4ff);
-  color: white;
+button {
   cursor: pointer;
-  font-weight: 600;
-  transition: transform 0.25s, box-shadow 0.25s, background 0.3s;
-}
-.premium-button:hover {
-  transform: translateY(-4px) scale(1.08);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.7);
-  background: linear-gradient(135deg, #63a4ff, #1e90ff);
-}
-
-/* Появление / исчезновение */
-.fade-out { animation: fadeOut 0.6s forwards; }
-@keyframes fadeOut { to { opacity: 0; transform: translateY(-20px); } }
-@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeInDown { to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeIn { to { opacity: 1; } }
-
-/* Карточки с hover эффектом */
-.feature-card {
-  background-color: #1e1e1e;
-  margin: 1rem 0;
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid #333;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s forwards;
-  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
-}
-.feature-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(30,144,255,0.4);
-  border-color: #1e90ff;
-}
-
-/* Инпуты для доната */
-.premium-input {
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  margin: 1rem auto;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background-color: #1e1e1e;
-  color: #fff;
-  font-size: 1rem;
-  transition: box-shadow 0.3s, border 0.3s;
-}
-.premium-input:focus {
-  outline: none;
-  box-shadow: 0 0 10px #1e90ff;
-  border-color: #1e90ff;
-}
-
-/* Адаптивность */
-@media (max-width: 600px) {
-  .container { padding: 1rem; margin: 1.5rem auto; }
 }
